@@ -1,29 +1,22 @@
 //
-//  AppDelegate.m
-//  PAGradientSample
+//  PXPAppDelegate.m
+//  GradientColorSample
 //
-//  Created by Louka Desroziers on 17/10/12.
-//  Copyright (c) 2012 Louka Desroziers. All rights reserved.
+//  Created by Louka Desroziers on 17/08/13.
+//  Copyright (c) 2013 PixiApps. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "PXPAppDelegate.h"
 
-#import "ViewController.h"
+#import "PXPViewController.h"
 
-@implementation AppDelegate
-
-- (void)dealloc
-{
-    [_window release];
-    [_viewController release];
-    [super dealloc];
-}
+@implementation PXPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    self.viewController = [[PXPViewController alloc] initWithNibName:@"PXPViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

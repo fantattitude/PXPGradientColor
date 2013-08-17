@@ -1,5 +1,5 @@
 //
-//  PAGradientColor.h
+//  PXPGradientColor.h
 //  PAGradientSample
 //
 //  Created by Louka Desroziers on 17/10/12.
@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PAColorSpace.h"
+#import "PXPColorSpace.h"
 
 #define PARGBConvert(x) x*1./255. // Converts the given decimal (from 0 to 255) into a decimal value in the range 0.0 to 1.0
 
 /** Objective-C Wrapper for CGGradientRef */
 
-@interface PAGradientColor : NSObject
+@interface PXPGradientColor : NSObject
 
 
 /** ------------ */
@@ -23,7 +23,7 @@
  * @param startingColor: The starting color of the gradient. The location of this color is fixed at 0.0.
  * @param endingColor: The ending color of the gradient. The location of this color is fixed at 1.0.
  *
- * @returns The initialized PAGradientColor object.
+ * @returns The initialized PXPGradientColor object.
   */
 - (id)initWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor;
 
@@ -35,7 +35,7 @@
 /** Initializes a newly allocated gradient object with an array of colors.
  * @param colors: An array of NSColor objects representing the colors to use to initialize the gradient. There must be at least two colors in the array. The first color is placed at location 0.0 and the last at location 1.0. If there are more than two colors, the additional colors are placed at evenly spaced intervals between the first and last colors.
  *
- * @returns The initialized PAGradientColor object.
+ * @returns The initialized PXPGradientColor object.
  */
 - (id)initWithColors:(NSArray *)colors;
 
@@ -49,9 +49,9 @@
  * @param locations: An array of NSNumber objects initialized using float values. Each value must be in the range 0.0 to 1.0. There must be the same number of locations as are colors in the 'colors' parameter.
  * @param colorSpace: The color space to use for the gradient.
  *
- * @returns The initialized PAGradientColor object.
+ * @returns The initialized PXPGradientColor object.
  */
-- (id)initWithColors:(NSArray *)colors atLocations:(NSArray *)locations colorSpace:(PAColorSpace *)colorSpace;
+- (id)initWithColors:(NSArray *)colors atLocations:(NSArray *)locations colorSpace:(PXPColorSpace *)colorSpace;
 
 
 
@@ -72,7 +72,7 @@
 
 /** ------------ */
 /** Getting Gradient Properties */
-- (PAColorSpace *)colorSpace;
+- (PXPColorSpace *)colorSpace;
 - (CGGradientRef)CGGradient;
 
 @end

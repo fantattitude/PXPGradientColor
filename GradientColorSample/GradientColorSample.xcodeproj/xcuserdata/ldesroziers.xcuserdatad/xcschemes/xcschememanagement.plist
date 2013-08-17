@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PAGradientSample.xcscheme</key>
+		<key>GradientColorSample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1724FD5A162F1EC200E066E9</key>
+		<key>17898C4E17BF7BFE0086ACEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

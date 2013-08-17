@@ -1,5 +1,5 @@
 //
-//  PAGradientColor.m
+//  PXPGradientColor.m
 //  PAGradientSample
 //
 //  Created by Louka Desroziers on 17/10/12.
@@ -7,12 +7,12 @@
 //
 
 #define _ClassInitFailedWithReason(msg) [NSString stringWithFormat:@"%@ couldn't be initialized: %@", NSStringFromClass([self class]), msg]
-#import "PAGradientColor.h"
+#import "PXPGradientColor.h"
 
-@implementation PAGradientColor
+@implementation PXPGradientColor
 {
     CGGradientRef   _gradientRef;
-    PAColorSpace    *_colorSpace;
+    PXPColorSpace    *_colorSpace;
 }
 
 + (NSArray *)__automaticLocationsForColors:(NSArray *)colors
@@ -22,34 +22,34 @@
     for (NSInteger idx = 0; idx < [colors count]; idx++)
         [locations addObject:[NSNumber numberWithFloat:(1./([colors count]-1)*idx)]];
 
-    return [NSArray arrayWithArray:[locations autorelease]];
+    return [NSArray arrayWithArray:locations];
 }
 
 - (id)initWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor
 {
     return [[[self class] alloc] initWithColors:[NSArray arrayWithObjects:startingColor, endingColor, nil]
                                     atLocations:[NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil]
-                                     colorSpace:[PAColorSpace deviceRGBColorSpace]];
+                                     colorSpace:[PXPColorSpace deviceRGBColorSpace]];
 }
 
 + (id)gradientWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor
 {
-    return [[[[self class] alloc] initWithStartingColor:startingColor endingColor:endingColor] autorelease];
+    return [[[self class] alloc] initWithStartingColor:startingColor endingColor:endingColor];
 }
 
 - (id)initWithColors:(NSArray *)colors
 {
     return [self initWithColors:colors
                     atLocations:[[self class] __automaticLocationsForColors:colors]
-                     colorSpace:[PAColorSpace deviceRGBColorSpace]];
+                     colorSpace:[PXPColorSpace deviceRGBColorSpace]];
 }
 
 + (id)gradientWithColors:(NSArray *)colors
 {
-    return [[[[self class] alloc] initWithColors:colors] autorelease];;
+    return [[[self class] alloc] initWithColors:colors];;
 }
 
-- (id)initWithColors:(NSArray *)colors atLocations:(NSArray *)locations colorSpace:(PAColorSpace *)colorSpace
+- (id)initWithColors:(NSArray *)colors atLocations:(NSArray *)locations colorSpace:(PXPColorSpace *)colorSpace
 {
     self = [super init];
     
@@ -63,7 +63,7 @@
         NSAssert(colorSpace != nil,
                  _ClassInitFailedWithReason(@"You must provide a color space."));
 
-        _colorSpace = [colorSpace retain];
+        _colorSpace = colorSpace;
         
         float *locationsCArray = malloc([locations count] * sizeof(float));
         [locations enumerateObjectsWithOptions:NSEnumerationConcurrent
@@ -79,10 +79,9 @@
             [CGColors addObject:(id)[color CGColor]];
         
         _gradientRef = CGGradientCreateWithColors([colorSpace CGColorSpace],
-                                                  (CFArrayRef)CGColors,
+                                                  (__bridge CFArrayRef)CGColors,
                                                   locationsCArray);
         
-        [CGColors release];
         free(locationsCArray);
         
     }
@@ -179,7 +178,7 @@
 
 #pragma mark - Getting Gradient Properties
 
-- (PAColorSpace *)colorSpace
+- (PXPColorSpace *)colorSpace
 {
     return _colorSpace;
 }
@@ -193,9 +192,7 @@
 
 - (void)dealloc
 {
-    [_colorSpace release];
     CGGradientRelease(_gradientRef);
-    [super dealloc];
 }
 
 @end

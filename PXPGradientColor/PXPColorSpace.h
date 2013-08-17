@@ -1,5 +1,5 @@
 //
-//  PAColorSpace.h
+//  PXPColorSpace.h
 //  PAGradientSample
 //
 //  Created by Louka Desroziers on 17/10/12.
@@ -10,7 +10,7 @@
 
 /** Objective-C Wrapper for CGColorSpaceRef */
 
-@interface PAColorSpace : NSObject
+@interface PXPColorSpace : NSObject
 
 + (id)deviceRGBColorSpace;
 + (id)deviceCMYKColorSpace;

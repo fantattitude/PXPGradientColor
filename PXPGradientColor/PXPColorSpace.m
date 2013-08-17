@@ -1,14 +1,14 @@
 //
-//  PAColorSpace.m
+//  PXPColorSpace.m
 //  PAGradientSample
 //
 //  Created by Louka Desroziers on 17/10/12.
 //  Copyright (c) 2012 Louka Desroziers. All rights reserved.
 //
 
-#import "PAColorSpace.h"
+#import "PXPColorSpace.h"
 
-@implementation PAColorSpace
+@implementation PXPColorSpace
 {
     CGColorSpaceRef _colorSpaceRef;
 }
@@ -16,32 +16,32 @@
 + (id)deviceRGBColorSpace
 {
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
-    PAColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
+    PXPColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
     
     CGColorSpaceRelease(colorSpaceRef);
    
-    return [colorSpace autorelease];
+    return colorSpace;
 }
 
 
 + (id)deviceCMYKColorSpace
 {
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceCMYK();
-    PAColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
+    PXPColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
     
     CGColorSpaceRelease(colorSpaceRef);
     
-    return [colorSpace autorelease];
+    return colorSpace;
 }
 
 + (id)deviceGrayColorSpace
 {
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
-    PAColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
+    PXPColorSpace *colorSpace = [[[self class] alloc] initWithCGColorSpace:colorSpaceRef];
     
     CGColorSpaceRelease(colorSpaceRef);
     
-    return [colorSpace autorelease];
+    return colorSpace;
 }
 
 
@@ -74,7 +74,6 @@
 - (void)dealloc
 {
     CGColorSpaceRelease(_colorSpaceRef);
-    [super dealloc];
 }
 
 @end
