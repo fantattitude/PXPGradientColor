@@ -1,16 +1,16 @@
 
-#PAGradientColor
+#PXPGradientColor
 
 iOS 4.0 minimum.
 
 ##License
 
-Without any further information, all the sources provided here are under the MIT License quoted in PAGradientColor/LICENSE.
+Without any further information, all the sources provided here are under the MIT License quoted in PXPGradientColor/LICENSE.
 
 
-##What is PAGradientColor
+##What is PXPGradientColor
 
-PAGradientColor is an Objective-C wrapper for CGGradient. Useful for your iOS projects.
+PXPGradientColor is an Objective-C wrapper for CGGradient. Useful for your iOS projects.
 It Offers you the ability to create a nice gradient with just one line of code.
 For example:
 
@@ -18,7 +18,7 @@ For example:
 						endingColor:(UIColor *)endingColor;
 	+ (id)gradientWithColors:(NSArray *)colors
 	
-Once your PAGradientColor object has been created, you can use the drawing method from any graphics context :
+Once your PXPGradientColor object has been created, you can use the drawing method from any graphics context :
 
 
 	@implement MyCustomView
