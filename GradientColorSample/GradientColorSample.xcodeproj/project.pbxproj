@@ -11,12 +11,12 @@
 		17898C5517BF7BFE0086ACEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17898C5417BF7BFE0086ACEC /* Foundation.framework */; };
 		17898C5717BF7BFE0086ACEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17898C5617BF7BFE0086ACEC /* CoreGraphics.framework */; };
 		17898C5D17BF7BFE0086ACEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17898C5B17BF7BFE0086ACEC /* InfoPlist.strings */; };
-		17898C5F17BF7BFE0086ACEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C5E17BF7BFE0086ACEC /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		17898C6317BF7BFE0086ACEC /* PXPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C6217BF7BFE0086ACEC /* PXPAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		17898C5F17BF7BFE0086ACEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C5E17BF7BFE0086ACEC /* main.m */; };
+		17898C6317BF7BFE0086ACEC /* PXPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C6217BF7BFE0086ACEC /* PXPAppDelegate.m */; };
 		17898C6517BF7BFE0086ACEC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17898C6417BF7BFE0086ACEC /* Default.png */; };
 		17898C6717BF7BFE0086ACEC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17898C6617BF7BFE0086ACEC /* Default@2x.png */; };
 		17898C6917BF7BFE0086ACEC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17898C6817BF7BFE0086ACEC /* Default-568h@2x.png */; };
-		17898C6C17BF7BFE0086ACEC /* PXPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C6B17BF7BFE0086ACEC /* PXPViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		17898C6C17BF7BFE0086ACEC /* PXPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C6B17BF7BFE0086ACEC /* PXPViewController.m */; };
 		17898C6F17BF7BFE0086ACEC /* PXPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17898C6D17BF7BFE0086ACEC /* PXPViewController.xib */; };
 		17898C7A17BF7C360086ACEC /* PXPColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C7717BF7C360086ACEC /* PXPColorSpace.m */; };
 		17898C7B17BF7C360086ACEC /* PXPGradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 17898C7917BF7C360086ACEC /* PXPGradientColor.m */; };
