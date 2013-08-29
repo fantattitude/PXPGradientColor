@@ -12,8 +12,8 @@
 @implementation PXPGradientColor
 {
     CGGradientRef   _gradientRef;
-    PXPColorSpace    *_colorSpace;
 }
+@synthesize colorSpace = _colorSpace;
 
 + (NSArray *)__automaticLocationsForColors:(NSArray *)colors
 {
@@ -177,11 +177,6 @@
 
 
 #pragma mark - Getting Gradient Properties
-
-- (PXPColorSpace *)colorSpace
-{
-    return _colorSpace;
-}
 
 - (CGGradientRef)CGGradient
 {

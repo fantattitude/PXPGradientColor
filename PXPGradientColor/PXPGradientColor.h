@@ -11,7 +11,9 @@
 
 #define PXPColorRGBConvert(x) x*1./255. // Converts the given decimal (from 0 to 255) into a decimal value in a range of 0.0 to 1.0 for UIColor
 
-/** Objective-C Wrapper for CGGradientRef */
+/** Objective-C Wrapper for CGGradientRef, intended to be used for iOS developments. 
+ * Works like NSGradient (OSX) 
+ */
 
 @interface PXPGradientColor : NSObject
 
@@ -72,7 +74,7 @@
 
 /** ------------ */
 /** Getting Gradient Properties */
-- (PXPColorSpace *)colorSpace;
+@property (nonatomic, readonly) PXPColorSpace *colorSpace;
 - (CGGradientRef)CGGradient;
 
 @end
