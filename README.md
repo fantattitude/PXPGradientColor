@@ -26,7 +26,7 @@ Once your PXPGradientColor object has been created, you can use the drawing meth
 	
 	- (void)drawRect:(CGRect)rect
 	{
-		[self gradient] drawInRect:rect angle:90];
+		[[]self gradient] drawInRect:rect angle:90];
 	}
 	
 	@end
