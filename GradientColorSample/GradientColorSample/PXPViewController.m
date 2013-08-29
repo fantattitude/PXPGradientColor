@@ -97,30 +97,30 @@
                  forControlEvents:UIControlEventValueChanged];
     
     
-    [[self ovalView] setGradient:[PXPGradientColor gradientWithColors:[NSArray arrayWithObjects:[UIColor redColor],
+    [[self ovalView] setGradient:[PXPGradientColor gradientWithColors:@[[UIColor redColor],
                                                                        [UIColor greenColor],
                                                                        [UIColor blackColor],
                                                                        [UIColor blueColor],
-                                                                       [UIColor yellowColor],
-                                                                       nil]]];
+                                                                       [UIColor yellowColor]
+                                                                        ]]];
     [[self ovalView] setBezierPath:[UIBezierPath bezierPathWithOvalInRect:[[self ovalView] bounds]]];
     
     
-    [[self rectangleView] setGradient:[PXPGradientColor gradientWithColors:[NSArray arrayWithObjects:[UIColor redColor],
-                                                                            [UIColor greenColor],
-                                                                            [UIColor blackColor],
-                                                                            [UIColor blueColor],
-                                                                            [UIColor yellowColor],
-                                                                            nil]]];
+    [[self rectangleView] setGradient:[PXPGradientColor gradientWithColors:@[[UIColor redColor],
+                                                                             [UIColor greenColor],
+                                                                             [UIColor blackColor],
+                                                                             [UIColor blueColor],
+                                                                             [UIColor yellowColor]
+                                                                             ]]];
     [[self rectangleView] setBezierPath:nil];
     
     
-    [[self triangleView] setGradient:[PXPGradientColor gradientWithColors:[NSArray arrayWithObjects:[UIColor redColor],
-                                                                           [UIColor greenColor],
-                                                                           [UIColor blackColor],
-                                                                           [UIColor blueColor],
-                                                                           [UIColor yellowColor],
-                                                                           nil]]];
+    [[self triangleView] setGradient:[PXPGradientColor gradientWithColors:@[[UIColor redColor],
+                                                                            [UIColor greenColor],
+                                                                            [UIColor blackColor],
+                                                                            [UIColor blueColor],
+                                                                            [UIColor yellowColor]
+                                                                            ]]];
     [[self triangleView] setBezierPath:[self __triangleBezierPathForFrame:[[self triangleView] bounds]]];
     
 }
