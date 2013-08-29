@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PXPColorSpace.h"
 
-#define PARGBConvert(x) x*1./255. // Converts the given decimal (from 0 to 255) into a decimal value in the range 0.0 to 1.0
+#define PXPColorRGBConvert(x) x*1./255. // Converts the given decimal (from 0 to 255) into a decimal value in a range of 0.0 to 1.0 for UIColor
 
 /** Objective-C Wrapper for CGGradientRef */
 

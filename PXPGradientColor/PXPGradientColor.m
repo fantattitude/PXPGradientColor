@@ -20,15 +20,15 @@
     NSMutableArray *locations = [[NSMutableArray alloc] init];
     
     for (NSInteger idx = 0; idx < [colors count]; idx++)
-        [locations addObject:[NSNumber numberWithFloat:(1./([colors count]-1)*idx)]];
+        [locations addObject:@(1./([colors count]-1)*idx)];
 
     return [NSArray arrayWithArray:locations];
 }
 
 - (id)initWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor
 {
-    return [[[self class] alloc] initWithColors:[NSArray arrayWithObjects:startingColor, endingColor, nil]
-                                    atLocations:[NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil]
+    return [[[self class] alloc] initWithColors:@[ startingColor, endingColor ]
+                                    atLocations:@[ @(0.0), @(1.0) ]
                                      colorSpace:[PXPColorSpace deviceRGBColorSpace]];
 }
 
