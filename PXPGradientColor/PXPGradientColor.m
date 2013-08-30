@@ -13,7 +13,6 @@
 {
     CGGradientRef   _gradientRef;
 }
-@synthesize colorSpace = _colorSpace;
 
 + (NSArray *)__automaticLocationsForColors:(NSArray *)colors
 {
