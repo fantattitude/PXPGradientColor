@@ -26,9 +26,9 @@
 
 - (id)initWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor
 {
-    return [[[self class] alloc] initWithColors:@[ startingColor, endingColor ]
-                                    atLocations:@[ @(0.0), @(1.0) ]
-                                     colorSpace:[PXPColorSpace deviceRGBColorSpace]];
+    return [self initWithColors:@[ startingColor, endingColor ]
+                    atLocations:@[ @(0.0), @(1.0) ]
+                     colorSpace:[PXPColorSpace deviceRGBColorSpace]];
 }
 
 + (id)gradientWithStartingColor:(UIColor *)startingColor endingColor:(UIColor *)endingColor
