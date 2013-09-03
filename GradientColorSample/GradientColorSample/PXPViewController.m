@@ -115,12 +115,7 @@
     [[self rectangleView] setBezierPath:nil];
     
     
-    [[self triangleView] setGradient:[PXPGradientColor gradientWithColors:@[[UIColor redColor],
-                                                                            [UIColor greenColor],
-                                                                            [UIColor blackColor],
-                                                                            [UIColor blueColor],
-                                                                            [UIColor yellowColor]
-                                                                            ]]];
+    [[self triangleView] setGradient:[PXPGradientColor gradientWithStartingColor:[UIColor grayColor] endingColor:[UIColor redColor]]];
     [[self triangleView] setBezierPath:[self __triangleBezierPathForFrame:[[self triangleView] bounds]]];
     
 }
