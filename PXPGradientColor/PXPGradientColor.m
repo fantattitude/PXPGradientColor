@@ -64,7 +64,7 @@
 
         _colorSpace = colorSpace;
         
-        float *locationsCArray = malloc([locations count] * sizeof(float));
+        CGFloat *locationsCArray = malloc([locations count] * sizeof(float));
         [locations enumerateObjectsWithOptions:NSEnumerationConcurrent
                                     usingBlock:^(id locationNumber, NSUInteger locationIdx, BOOL *stop){
                                         
