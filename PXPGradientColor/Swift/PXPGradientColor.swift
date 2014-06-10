@@ -85,7 +85,7 @@ class PXPGradientColor
         let square: Double = sqrt(Double(CGRectGetWidth(rect)) * Double(CGRectGetWidth(rect)) + Double(CGRectGetHeight(rect)) * Double(CGRectGetHeight(rect)))
         let distanceToEnd: Double = cos(atan2(Double(tanSize.y), Double(tanSize.x)) - radAngle) * square
 
-        end = CGPoint(x: Float(cos(radAngle) * distanceToEnd) + start.x, y: Float(sin(radAngle) * distanceToEnd) + start.y)
+        end = CGPoint(x: CGFloat(cos(radAngle) * distanceToEnd) + start.x, y: CGFloat(sin(radAngle) * distanceToEnd) + start.y)
         
         startPoint = start; endPoint = end
     }

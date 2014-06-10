@@ -24,7 +24,7 @@ class PXPGradientGeometryView : UIView {
         case .Oval:
             return UIBezierPath(ovalInRect: self.bounds)
         case .Circle:
-            let diameter: Float = min(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
+            let diameter: CGFloat = min(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
             return UIBezierPath(ovalInRect: CGRect(x: CGRectGetWidth(self.bounds)/2.0 - diameter/2.0, y: CGRectGetHeight(self.bounds)/2.0 - diameter/2.0, width: diameter, height: diameter))
         default:
             return UIBezierPath(rect: self.bounds)
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.testView)
-        self.testView.gradient = PXPGradientColor(startingColor: UIColor.whiteColor(), endingColor: UIColor.blueColor())
+        self.testView.gradient = PXPGradientColor(colors: [UIColor.whiteColor(), UIColor.blueColor(), UIColor.darkGrayColor()])
         
         self.view.addSubview(self.angleSlider)
         self.angleSlider.minimumValue = 0.0
