@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.testView)
-        self.testView.gradient = PXPGradientColor(colors: [UIColor.whiteColor(), UIColor.blueColor(), UIColor.darkGrayColor()])
+        self.testView.gradient = PXPGradientColor(colors: [UIColor.whiteColor(), UIColor.blackColor(), UIColor.blueColor()], locations: nil, colorSpace: nil)
         
         self.view.addSubview(self.angleSlider)
         self.angleSlider.minimumValue = 0.0

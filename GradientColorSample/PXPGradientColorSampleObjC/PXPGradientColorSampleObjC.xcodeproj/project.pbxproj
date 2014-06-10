@@ -13,8 +13,8 @@
 		1756AB041946FD4800A80AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1756AB021946FD4800A80AB5 /* Main.storyboard */; };
 		1756AB061946FD4800A80AB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756AB051946FD4800A80AB5 /* Images.xcassets */; };
 		1756AB121946FD4800A80AB5 /* PXPGradientColorSampleObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB111946FD4800A80AB5 /* PXPGradientColorSampleObjCTests.m */; };
-		1756AB831946FE2B00A80AB5 /* PXPColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB801946FE2B00A80AB5 /* PXPColorSpace.m */; };
-		1756AB841946FE2B00A80AB5 /* PXPGradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB821946FE2B00A80AB5 /* PXPGradientColor.m */; };
+		1775971B1947706100424D9E /* PXPColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 177597181947706100424D9E /* PXPColorSpace.m */; };
+		1775971C1947706100424D9E /* PXPGradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1775971A1947706100424D9E /* PXPGradientColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		1756AB0B1946FD4800A80AB5 /* PXPGradientColorSampleObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PXPGradientColorSampleObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1756AB101946FD4800A80AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1756AB111946FD4800A80AB5 /* PXPGradientColorSampleObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PXPGradientColorSampleObjCTests.m; sourceTree = "<group>"; };
-		1756AB7F1946FE2B00A80AB5 /* PXPColorSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXPColorSpace.h; path = ../../PXPGradientColor/ObjC/PXPColorSpace.h; sourceTree = "<group>"; };
-		1756AB801946FE2B00A80AB5 /* PXPColorSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXPColorSpace.m; path = ../../PXPGradientColor/ObjC/PXPColorSpace.m; sourceTree = "<group>"; };
-		1756AB811946FE2B00A80AB5 /* PXPGradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXPGradientColor.h; path = ../../PXPGradientColor/ObjC/PXPGradientColor.h; sourceTree = "<group>"; };
-		1756AB821946FE2B00A80AB5 /* PXPGradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXPGradientColor.m; path = ../../PXPGradientColor/ObjC/PXPGradientColor.m; sourceTree = "<group>"; };
+		177597171947706100424D9E /* PXPColorSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXPColorSpace.h; sourceTree = "<group>"; };
+		177597181947706100424D9E /* PXPColorSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXPColorSpace.m; sourceTree = "<group>"; };
+		177597191947706100424D9E /* PXPGradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXPGradientColor.h; sourceTree = "<group>"; };
+		1775971A1947706100424D9E /* PXPGradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXPGradientColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 		1756AAEC1946FD4800A80AB5 = {
 			isa = PBXGroup;
 			children = (
-				1756AB7E1946FE1A00A80AB5 /* PXPGradientColor-ObjC */,
+				177597161947706100424D9E /* PXPGradientColor-ObjC */,
 				1756AAF71946FD4800A80AB5 /* PXPGradientColorSampleObjC */,
 				1756AB0E1946FD4800A80AB5 /* PXPGradientColorSampleObjCTests */,
 				1756AAF61946FD4800A80AB5 /* Products */,
@@ -123,15 +123,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1756AB7E1946FE1A00A80AB5 /* PXPGradientColor-ObjC */ = {
+		177597161947706100424D9E /* PXPGradientColor-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				1756AB7F1946FE2B00A80AB5 /* PXPColorSpace.h */,
-				1756AB801946FE2B00A80AB5 /* PXPColorSpace.m */,
-				1756AB811946FE2B00A80AB5 /* PXPGradientColor.h */,
-				1756AB821946FE2B00A80AB5 /* PXPGradientColor.m */,
+				177597171947706100424D9E /* PXPColorSpace.h */,
+				177597181947706100424D9E /* PXPColorSpace.m */,
+				177597191947706100424D9E /* PXPGradientColor.h */,
+				1775971A1947706100424D9E /* PXPGradientColor.m */,
 			);
 			name = "PXPGradientColor-ObjC";
+			path = "../../PXPGradientColor-ObjC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1756AB011946FD4800A80AB5 /* ViewController.m in Sources */,
-				1756AB841946FE2B00A80AB5 /* PXPGradientColor.m in Sources */,
-				1756AB831946FE2B00A80AB5 /* PXPColorSpace.m in Sources */,
+				1775971C1947706100424D9E /* PXPGradientColor.m in Sources */,
+				1775971B1947706100424D9E /* PXPColorSpace.m in Sources */,
 				1756AAFE1946FD4800A80AB5 /* AppDelegate.m in Sources */,
 				1756AAFB1946FD4800A80AB5 /* main.m in Sources */,
 			);
@@ -424,6 +425,7 @@
 				1756AB171946FD4800A80AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1756AB181946FD4800A80AB5 /* Build configuration list for PBXNativeTarget "PXPGradientColorSampleObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +434,7 @@
 				1756AB1A1946FD4800A80AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

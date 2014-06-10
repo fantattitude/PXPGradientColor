@@ -12,8 +12,8 @@
 		1756AB631946FDB600A80AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1756AB611946FDB600A80AB5 /* Main.storyboard */; };
 		1756AB651946FDB600A80AB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756AB641946FDB600A80AB5 /* Images.xcassets */; };
 		1756AB711946FDB600A80AB5 /* PXPGradientColorSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB701946FDB600A80AB5 /* PXPGradientColorSampleSwiftTests.swift */; };
-		1756AB871946FE3B00A80AB5 /* PXPColorSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB861946FE3B00A80AB5 /* PXPColorSpace.swift */; };
-		1756AB891946FE4800A80AB5 /* PXPGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756AB881946FE4800A80AB5 /* PXPGradientColor.swift */; };
+		177597201947706500424D9E /* PXPColorSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775971E1947706500424D9E /* PXPColorSpace.swift */; };
+		177597211947706500424D9E /* PXPGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1775971F1947706500424D9E /* PXPGradientColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		1756AB6A1946FDB600A80AB5 /* PXPGradientColorSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PXPGradientColorSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1756AB6F1946FDB600A80AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1756AB701946FDB600A80AB5 /* PXPGradientColorSampleSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXPGradientColorSampleSwiftTests.swift; sourceTree = "<group>"; };
-		1756AB861946FE3B00A80AB5 /* PXPColorSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PXPColorSpace.swift; path = ../../PXPGradientColor/Swift/PXPColorSpace.swift; sourceTree = "<group>"; };
-		1756AB881946FE4800A80AB5 /* PXPGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PXPGradientColor.swift; path = ../../PXPGradientColor/Swift/PXPGradientColor.swift; sourceTree = "<group>"; };
+		1775971E1947706500424D9E /* PXPColorSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXPColorSpace.swift; sourceTree = "<group>"; };
+		1775971F1947706500424D9E /* PXPGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXPGradientColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		1756AB4F1946FDB600A80AB5 = {
 			isa = PBXGroup;
 			children = (
-				1756AB851946FE3000A80AB5 /* PXPGradientColor-Swift */,
+				1775971D1947706500424D9E /* PXPGradientColor-Swift */,
 				1756AB5A1946FDB600A80AB5 /* PXPGradientColorSampleSwift */,
 				1756AB6D1946FDB600A80AB5 /* PXPGradientColorSampleSwiftTests */,
 				1756AB591946FDB600A80AB5 /* Products */,
@@ -114,13 +114,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1756AB851946FE3000A80AB5 /* PXPGradientColor-Swift */ = {
+		1775971D1947706500424D9E /* PXPGradientColor-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				1756AB861946FE3B00A80AB5 /* PXPColorSpace.swift */,
-				1756AB881946FE4800A80AB5 /* PXPGradientColor.swift */,
+				1775971E1947706500424D9E /* PXPColorSpace.swift */,
+				1775971F1947706500424D9E /* PXPGradientColor.swift */,
 			);
 			name = "PXPGradientColor-Swift";
+			path = "../../PXPGradientColor-Swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177597211947706500424D9E /* PXPGradientColor.swift in Sources */,
 				1756AB601946FDB600A80AB5 /* ViewController.swift in Sources */,
-				1756AB871946FE3B00A80AB5 /* PXPColorSpace.swift in Sources */,
-				1756AB891946FE4800A80AB5 /* PXPGradientColor.swift in Sources */,
+				177597201947706500424D9E /* PXPColorSpace.swift in Sources */,
 				1756AB5E1946FDB600A80AB5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
