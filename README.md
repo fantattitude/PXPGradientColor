@@ -1,8 +1,8 @@
 
 #PXPGradientColor
 
-iOS 4.0 minimum.
-Supports Swift.
+iOS 4.0 minimum for ObjC.
+iOS 8.0 minimum for Swift.
 
 ##License
 
