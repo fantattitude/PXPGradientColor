@@ -13,7 +13,7 @@ import QuartzCore
 class PXPColorSpace
 {
     let colorSpaceRef: CGColorSpace!
-    var numberofComponents: Int { return Int(CGColorSpaceGetNumberOfComponents(self.colorSpaceRef)) }
+    var numberOfComponents: Int { return Int(CGColorSpaceGetNumberOfComponents(self.colorSpaceRef)) }
     
     init(colorSpaceRef: CGColorSpace) {
         assert(colorSpaceRef != nil, "You must provide a CGColorSpace")
