@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 Louka Desroziers. All rights reserved.
 //
 
-@import Foundation;
-@import UIKit;
+
 #import "PXPColorSpace.h"
 
 

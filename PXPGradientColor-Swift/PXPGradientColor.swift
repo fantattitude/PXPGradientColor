@@ -14,11 +14,11 @@ class PXPGradientColor
     let colorSpace: PXPColorSpace!
     let gradientRef: CGGradient!
     
-    class func createGradientRefUsing(colors: UIColor[]!, locations: CGFloat[]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
+    class func createGradientRefUsing(colors: [UIColor]!, locations: [CGFloat]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
     
-        var cfLocations: CConstPointer<CGFloat> = nil
-        if locations != nil {
-            cfLocations = locations!
+        var cfLocations: ConstUnsafePointer<CGFloat> = nil
+        if locations? != nil {
+            cfLocations = ConstUnsafePointer(locations!)
         }
         
         let colorsAsObjCArray: NSArray = colors.bridgeToObjectiveC()
@@ -34,7 +34,7 @@ class PXPGradientColor
     }
     
     /** Initializes a PXPGradientColor object with given UIColors, locations, colorSpace. If no colorSpace provided, a deviceRGBColorSpace is used instead. If no locations provided, CGGradient automatically splits the colors by itself */
-    init(colors: UIColor[]!, locations: CGFloat[]?, colorSpace: PXPColorSpace?) {
+    init(colors: [UIColor]!, locations: [CGFloat]?, colorSpace: PXPColorSpace?) {
         self.colorSpace = (colorSpace ? colorSpace! : PXPColorSpace.deviceRGBColorSpace())
         self.gradientRef = PXPGradientColor.createGradientRefUsing(colors, locations: locations, colorSpaceRef: self.colorSpace.colorSpaceRef)
         println(self.gradientRef)
@@ -48,7 +48,7 @@ class PXPGradientColor
     convenience init(startingColor: UIColor!, endingColor: UIColor!) {
         self.init(colors: [startingColor, endingColor], locations: nil, colorSpace: nil)
     }
-    convenience init(colors: UIColor[]!) {
+    convenience init(colors: [UIColor]!) {
         self.init(colors: colors, locations: nil, colorSpace: nil)
     }
     
@@ -69,13 +69,13 @@ class PXPGradientColor
         tanSize = CGPoint(x: CGRectGetWidth(rect), y: CGRectGetHeight(rect))
 
         switch positiveAngle {
-        case 90..180 :
+        case 90..<180 :
             start.x = CGRectGetMaxX(rect)
             tanSize.x = -CGRectGetWidth(rect)
-        case 180..270 :
+        case 180..<270 :
             start = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect))
             tanSize = CGPoint(x: -CGRectGetWidth(rect), y: -CGRectGetHeight(rect))
-        case 270..360:
+        case 270..<360:
             start.y = CGRectGetMaxY(rect)
             tanSize.y = -CGRectGetHeight(rect)
         default:break

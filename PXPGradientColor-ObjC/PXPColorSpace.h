@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Louka Desroziers. All rights reserved.
 //
 
-@import Foundation;
-@import QuartzCore;
 
 /** Objective-C Wrapper for CGColorSpaceRef */
 

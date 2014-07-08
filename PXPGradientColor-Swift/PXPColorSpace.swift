@@ -15,8 +15,7 @@ class PXPColorSpace
     let colorSpaceRef: CGColorSpace!
     var numberOfComponents: Int { return Int(CGColorSpaceGetNumberOfComponents(self.colorSpaceRef)) }
     
-    init(colorSpaceRef: CGColorSpace) {
-        assert(colorSpaceRef != nil, "You must provide a CGColorSpace")
+    init(colorSpaceRef: CGColorSpace!) {
         self.colorSpaceRef = colorSpaceRef
     }
     
