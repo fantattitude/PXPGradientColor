@@ -12,7 +12,7 @@ import QuartzCore
 
 class PXPColorSpace
 {
-    let colorSpaceRef: CGColorSpace!
+    internal let colorSpaceRef: CGColorSpace!
     var numberOfComponents: Int { return Int(CGColorSpaceGetNumberOfComponents(self.colorSpaceRef)) }
     
     init(colorSpaceRef: CGColorSpace!) {

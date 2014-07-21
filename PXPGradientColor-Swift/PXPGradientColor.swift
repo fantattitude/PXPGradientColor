@@ -12,12 +12,12 @@ import UIKit
 class PXPGradientColor
 {
     let colorSpace: PXPColorSpace!
-    let gradientRef: CGGradient!
+    internal let gradientRef: CGGradient!
     
-    class func createGradientRefUsing(colors: [UIColor]!, locations: [CGFloat]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
+    private class func createGradientRefUsing(colors: [UIColor]!, locations: [CGFloat]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
     
         var cfLocations: ConstUnsafePointer<CGFloat> = nil
-        if locations? != nil {
+        if locations? {
             cfLocations = ConstUnsafePointer(locations!)
         }
         
@@ -52,12 +52,12 @@ class PXPGradientColor
         self.init(colors: colors, locations: nil, colorSpace: nil)
     }
     
-    @final func scopedAngle(angle: Double) -> Double {
+    private func scopedAngle(angle: Double) -> Double {
         return fmod(angle, 360)
     }
     
     // ##Credits goes to Cocotron
-    @final func retrieveStartAndEndPoints(inout startPoint: CGPoint, inout endPoint: CGPoint, usingAngle angle: Double, inRect rect: CGRect) {
+    private func retrieveStartAndEndPoints(inout startPoint: CGPoint, inout endPoint: CGPoint, usingAngle angle: Double, inRect rect: CGRect) {
         
         var start:CGPoint, end:CGPoint
         var tanSize: CGPoint
@@ -67,18 +67,19 @@ class PXPGradientColor
         
         start = CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMinY(rect))
         tanSize = CGPoint(x: CGRectGetWidth(rect), y: CGRectGetHeight(rect))
-
-        switch positiveAngle {
-        case 90..<180 :
-            start.x = CGRectGetMaxX(rect)
-            tanSize.x = -CGRectGetWidth(rect)
-        case 180..<270 :
-            start = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect))
-            tanSize = CGPoint(x: -CGRectGetWidth(rect), y: -CGRectGetHeight(rect))
-        case 270..<360:
-            start.y = CGRectGetMaxY(rect)
-            tanSize.y = -CGRectGetHeight(rect)
-        default:break
+        
+        if positiveAngle >= 90 {
+            if positiveAngle < 180 {
+                start.x = CGRectGetMaxX(rect)
+                tanSize.x = -CGRectGetWidth(rect)
+            } else if positiveAngle < 270 {
+                start = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect))
+                tanSize = CGPoint(x: -CGRectGetWidth(rect), y: -CGRectGetHeight(rect))
+            }
+            else if positiveAngle < 360 {
+                start.y = CGRectGetMaxY(rect)
+                tanSize.y = -CGRectGetHeight(rect)
+            }
         }
         
         let radAngle: Double = positiveAngle / 180 * M_PI
