@@ -16,26 +16,22 @@ class PXPGradientColor
     
     private class func createGradientRefUsing(colors: [UIColor]!, locations: [CGFloat]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
     
-        var cfLocations: ConstUnsafePointer<CGFloat> = nil
-        if locations? {
-            cfLocations = ConstUnsafePointer(locations!)
+        var cfLocations: UnsafePointer<CGFloat> = nil
+        if locations != nil {
+            cfLocations = UnsafePointer(locations!)
         }
         
-        let colorsAsObjCArray: NSArray = colors.bridgeToObjectiveC()
-        let cgColorsAsObjCArray: NSMutableArray = NSMutableArray(capacity: colorsAsObjCArray.count)
-        for color: AnyObject in colorsAsObjCArray {
-            assert(color.isKindOfClass(UIColor), "You must provide UIColor objects")
-            if color.isKindOfClass(UIColor) {
-                cgColorsAsObjCArray.addObject(color.CGColor)
-            }
-        }
-
-        return CGGradientCreateWithColors(colorSpaceRef, cgColorsAsObjCArray, cfLocations)
+        var cgColors: NSArray = colors.map {
+            (color: UIColor!) -> AnyObject! in
+            return color.CGColor as AnyObject!
+            } as NSArray
+        
+        return CGGradientCreateWithColors(colorSpaceRef, cgColors, cfLocations)
     }
     
     /** Initializes a PXPGradientColor object with given UIColors, locations, colorSpace. If no colorSpace provided, a deviceRGBColorSpace is used instead. If no locations provided, CGGradient automatically splits the colors by itself */
     init(colors: [UIColor]!, locations: [CGFloat]?, colorSpace: PXPColorSpace?) {
-        self.colorSpace = (colorSpace ? colorSpace! : PXPColorSpace.deviceRGBColorSpace())
+        self.colorSpace = (colorSpace != nil ? colorSpace! : PXPColorSpace.deviceRGBColorSpace())
         self.gradientRef = PXPGradientColor.createGradientRefUsing(colors, locations: locations, colorSpaceRef: self.colorSpace.colorSpaceRef)
         println(self.gradientRef)
     }

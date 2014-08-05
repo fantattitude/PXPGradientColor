@@ -36,11 +36,11 @@ class PXPGradientGeometryView : UIView {
         self.geometryType = geometryType
         super.init(frame: frame)
     }
-    convenience init(frame: CGRect)  {
+    override convenience init(frame: CGRect)  {
         self.init(frame: frame, geometryType: .Rectangle)
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         self.geometryType = PXPGeometryType.fromRaw(aDecoder.decodeIntegerForKey("rawGeometryType"))!
         self.angle = aDecoder.decodeDoubleForKey("angle")
         super.init(coder: aDecoder)
@@ -53,7 +53,7 @@ class PXPGradientGeometryView : UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        if self.gradient {
+        if self.gradient != nil {
             self.gradient!.draw(inBezierPath: self.bezierPath, angle: self.angle)
         } else {
             let ctx: CGContextRef = UIGraphicsGetCurrentContext()
