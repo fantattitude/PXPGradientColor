@@ -40,16 +40,16 @@ class PXPGradientGeometryView : UIView {
         self.init(frame: frame, geometryType: .Rectangle)
     }
     
-    required init(coder aDecoder: NSCoder!) {
-        self.geometryType = PXPGeometryType.fromRaw(aDecoder.decodeIntegerForKey("rawGeometryType"))!
+    required init(coder aDecoder: NSCoder) {
+        self.geometryType = PXPGeometryType(rawValue: aDecoder.decodeIntegerForKey("rawGeometryType"))!
         self.angle = aDecoder.decodeDoubleForKey("angle")
         super.init(coder: aDecoder)
     }
     
-    override func encodeWithCoder(aCoder: NSCoder!) {
+    override func encodeWithCoder(aCoder: NSCoder) {
         super.encodeWithCoder(aCoder)
         aCoder.encodeDouble(self.angle, forKey: "angle")
-        aCoder.encodeInteger(self.geometryType.toRaw(), forKey: "rawGeometryType")
+        aCoder.encodeInteger(self.geometryType.rawValue, forKey: "rawGeometryType")
     }
     
     override func drawRect(rect: CGRect) {

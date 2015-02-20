@@ -11,8 +11,8 @@ import UIKit
 
 class PXPGradientColor
 {
-    let colorSpace: PXPColorSpace!
-    internal let gradientRef: CGGradient!
+    let colorSpace: PXPColorSpace
+    internal let gradientRef: CGGradient
     
     private class func createGradientRefUsing(colors: [UIColor]!, locations: [CGFloat]?, colorSpaceRef: CGColorSpace!) -> CGGradient {
     
@@ -30,10 +30,9 @@ class PXPGradientColor
     }
     
     /** Initializes a PXPGradientColor object with given UIColors, locations, colorSpace. If no colorSpace provided, a deviceRGBColorSpace is used instead. If no locations provided, CGGradient automatically splits the colors by itself */
-    init(colors: [UIColor]!, locations: [CGFloat]?, colorSpace: PXPColorSpace?) {
+    init(colors: [UIColor], locations: [CGFloat]?, colorSpace: PXPColorSpace?) {
         self.colorSpace = (colorSpace != nil ? colorSpace! : PXPColorSpace.deviceRGBColorSpace())
         self.gradientRef = PXPGradientColor.createGradientRefUsing(colors, locations: locations, colorSpaceRef: self.colorSpace.colorSpaceRef)
-        println(self.gradientRef)
     }
     
     convenience init() {
@@ -41,10 +40,10 @@ class PXPGradientColor
         self.init(colors: [UIColor.blackColor(), UIColor.whiteColor()], locations: nil, colorSpace: PXPColorSpace.deviceGrayColorSpace())
     }
     
-    convenience init(startingColor: UIColor!, endingColor: UIColor!) {
+    convenience init(startingColor: UIColor, endingColor: UIColor) {
         self.init(colors: [startingColor, endingColor], locations: nil, colorSpace: nil)
     }
-    convenience init(colors: [UIColor]!) {
+    convenience init(colors: [UIColor]) {
         self.init(colors: colors, locations: nil, colorSpace: nil)
     }
     
@@ -92,7 +91,7 @@ class PXPGradientColor
         self.draw(inBezierPath: UIBezierPath(rect: rect), angle: angle)
     }
     
-    func draw(inBezierPath bezierPath: UIBezierPath!, angle: Double) {
+    func draw(inBezierPath bezierPath: UIBezierPath, angle: Double) {
         let ctx: CGContext = UIGraphicsGetCurrentContext()
         CGContextSaveGState(ctx)
         CGContextAddPath(ctx, bezierPath.CGPath)
@@ -103,7 +102,7 @@ class PXPGradientColor
         self.retrieveStartAndEndPoints(&startPoint, endPoint: &endPoint, usingAngle: angle, inRect: bezierPath.bounds)
         
         CGContextDrawLinearGradient(ctx, self.gradientRef, startPoint, endPoint, 0)
-        CGContextRestoreGState(ctx);
+        CGContextRestoreGState(ctx)
     }
     
 }
