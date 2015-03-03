@@ -15,43 +15,49 @@ PXPGradientColor is an Objective-C / Swift wrapper for CGGradient. Useful for yo
 It Offers you the ability to create a nice gradient with just one line of code.
 
 ObjC:
-
-	+ (id)gradientWithStartingColor:(UIColor *)startingColor 
-						endingColor:(UIColor *)endingColor;
-	+ (id)gradientWithColors:(NSArray *)colors
+```objc
++ (id)gradientWithStartingColor:(UIColor *)startingColor 
+                    endingColor:(UIColor *)endingColor;
++ (id)gradientWithColors:(NSArray *)colors
+```
 	
 Swift:
-	
-	init(colors: UIColor[]!, locations: CGFloat[]?, colorSpace: PXPColorSpace?)
-	init(startingColor: UIColor!, endingColor: UIColor!);
-	init(colors: UIColor[]!)
-	
+
+```swift	
+init(colors: UIColor[]!, locations: CGFloat[]?, colorSpace: PXPColorSpace?)
+init(startingColor: UIColor!, endingColor: UIColor!);
+init(colors: UIColor[]!)
+```
+
 Once your PXPGradientColor object has been created, you can use the drawing method from any graphics context :
 
 ObjC:
 
-	@implement MyCustomView
-	@synthesize gradient = _gradient;
-	
-	- (void)drawRect:(CGRect)rect
-	{
-		[[self gradient] drawInRect:rect angle:90];
-		// or provide your UIBezierPath and use -drawInBezierPath:angle:
-	}
-	
-	@end
+```objc
+@implement MyCustomView
+@synthesize gradient = _gradient;
+
+- (void)drawRect:(CGRect)rect
+{
+	[[self gradient] drawInRect:rect angle:90];
+	// or provide your UIBezierPath and use -drawInBezierPath:angle:
+}
+
+@end
+```
 	
 	
 Swift:
-	
-	class MyCustomView: UIView {
-		var gradient: PXPGradientColor?
-		override func drawRect(rect: CGRect) {
-			self.gradient?.draw(inRect: rect)
-			// or provide your UIBezierPath and use .draw(inBezierPath bezierPath: UIBezierPath, angle: Double)
-		}
+
+```swift	
+class MyCustomView: UIView {
+	var gradient: PXPGradientColor?
+	override func drawRect(rect: CGRect) {
+		self.gradient?.draw(inRect: rect)
+		// or provide your UIBezierPath and use .draw(inBezierPath bezierPath: UIBezierPath, angle: Double)
 	}
-	
+}
+```
 	
 	
 As simple as that.
